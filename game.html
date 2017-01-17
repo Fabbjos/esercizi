@@ -4,55 +4,127 @@
 <head>
     <meta charset="utf-8">
     <title>Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+
+        h1 {
+          padding: 20px 0;
+          font-size: 1.6em;
+          text-align: center;
+        }
+
+        .p1, .vs {
+          float: left;
+        }
+
+        .p1 {
+          text-align: right;
+        }
+
+        .p2 {
+          float: right;
+          text-align: left;
+        }
+
+        .vs {
+          text-align: center;
+          width: 16%;
+        }
+
+        .player {
+          width: 42%;
+          font-size: 1.2em;
+        }
+
+        .win, .result, .restart {
+          width: 100%;
+          text-align: center;
+        }
+
+        .win {
+            text-transform: uppercase;
+            color: #bc0202;
+            font-size: 1.2em;
+        }
+
+        .player {
+            text-transform: uppercase;
+            color: #FF8F12;
+        }
+
+        span {
+          color: #333;
+          font-size: .8em;
+        }
+
+        .restart {
+          padding-top: 20px;
+        }
+
+        .error {
+          text-align: center;
+        }
+
+        .undefined {
+          text-align: center;
+          text-transform: uppercase;
+          color: #eee;
+        }
+    </style>
 </head>
 
 <body>
+  <h1>SASSO - FORBICI - CARTA</h1>
     <script>
         function getUserChoice() {
-            var userInput = prompt('Chose: Paper, Rock, Scissors.');
+            var userInput = prompt('Digita: Carta, Sasso o Forbici.');
             userInput = userInput.toLowerCase();
-            if ((userInput == 'rock') || (userInput == 'paper') || (userInput == 'scissors') || (userInput == 'bomb')) {
+            if ((userInput == 'sasso') || (userInput == 'carta') || (userInput == 'forbici') || (userInput == 'babalù')) {
                 return userInput;
             } else {
-                document.write('Syntax error<br />');
+                document.write('<div class="error">Parola non trovata, riprova inserendo sasso, carta o forbici</div><br /><br />');
             }
         }
 
         function getComputerChoice() {
             var random = (Math.floor(Math.random() * 2) + 1);
             if (random == 0) {
-                return 'rock';
+                return 'sasso';
             } else if (random == 1) {
-                return 'paper';
+                return 'carta';
             } else {
-                return 'scissors';
+                return 'forbici';
             }
         }
 
         function determineWinner(userChoice, computerChoice) {
             if ((userChoice == computerChoice)) {
-                return 'Players tie<br />';
+                return '<div class="win">Parità</div><br /><br />';
             } else {
-                if ((userChoice == 'rock')) {
-                    if ((computerChoice == 'scissors')) {
-                        return 'User win<br />';
+                if ((userChoice == 'sasso')) {
+                    if ((computerChoice == 'forbici')) {
+                        return '<div class="win">Hai vinto!!!</div><br /><br />';
                     } else {
-                        return 'Computer win<br />';
+                        return '<div class="win">Hai perso!!!</div><br /><br />';
                     }
-                } else if ((userChoice == 'paper')) {
-                    if ((computerChoice == 'scissors')) {
-                        return 'Computer win<br />';
+                } else if ((userChoice == 'carta')) {
+                    if ((computerChoice == 'forbici')) {
+                        return '<div class="win">Hai perso!!!</div><br /><br />';
                     } else {
-                        return 'User win<br />';
+                        return '<div class="win">Hai vinto!!!</div><br /><br />';
                     }
-                } else if ((userChoice == 'scissors')) {
-                    if ((computerChoice == 'rock')) {
-                        return 'Computer win<br />';
+                } else if ((userChoice == 'forbici')) {
+                    if ((computerChoice == 'sasso')) {
+                        return '<div class="win">Hai perso!!!</div><br /><br />';
                     } else {
-                        return 'User win<br />';
+                        return '<div class="win">Hai vinto!!!</div><br /><br />';
                     }
-                } else if (userChoice == 'bomb') {
-                    return 'User win<br />';
+                } else if (userChoice == 'babalù') {
+                    return '<div class="win">Hai vinto!!!</div><br /><br />';
                 }
             }
         }
@@ -60,10 +132,9 @@
         function playGame() {
             var userChoice = getUserChoice();
             var computerChoice = getComputerChoice();
-            document.write('User: ' + userChoice + '<br />');
-            document.write('Computer: ' + computerChoice + '<br />');
-            document.write(determineWinner(userChoice, computerChoice));
-            document.write('Click F5 for restart game<br />');
+            document.write('<div class="container"><div class="player p1">Giocatore: <span>' + userChoice + '</span></div><div class="vs">VS</div><div class="player p2">Computer: <span>' + computerChoice + '</span></div></div><br /><br />');
+            document.write('<div class="restart">Clicca F5 per ricominciare</div><br /><br />');
+            document.write('<div class="undefined">' + determineWinner(userChoice, computerChoice) + '</div>');
         }
 
         playGame();
