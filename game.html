@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Game</title>
+</head>
+
+<body>
+    <script>
+        function getUserChoice() {
+            var userInput = prompt('Chose: Paper, Rock, Scissors.');
+            userInput = userInput.toLowerCase();
+            if ((userInput == 'rock') || (userInput == 'paper') || (userInput == 'scissors') || (userInput == 'bomb')) {
+                return userInput;
+            } else {
+                document.write('Syntax error<br />');
+            }
+        }
+
+        function getComputerChoice() {
+            var random = (Math.floor(Math.random() * 2) + 1);
+            if (random == 0) {
+                return 'rock';
+            } else if (random == 1) {
+                return 'paper';
+            } else {
+                return 'scissors';
+            }
+        }
+
+        function determineWinner(userChoice, computerChoice) {
+            if ((userChoice == computerChoice)) {
+                return 'Players tie<br />';
+            } else {
+                if ((userChoice == 'rock')) {
+                    if ((computerChoice == 'scissors')) {
+                        return 'User win<br />';
+                    } else {
+                        return 'Computer win<br />';
+                    }
+                } else if ((userChoice == 'paper')) {
+                    if ((computerChoice == 'scissors')) {
+                        return 'Computer win<br />';
+                    } else {
+                        return 'User win<br />';
+                    }
+                } else if ((userChoice == 'scissors')) {
+                    if ((computerChoice == 'rock')) {
+                        return 'Computer win<br />';
+                    } else {
+                        return 'User win<br />';
+                    }
+                } else if (userChoice == 'bomb') {
+                    return 'User win<br />';
+                }
+            }
+        }
+
+        function playGame() {
+            var userChoice = getUserChoice();
+            var computerChoice = getComputerChoice();
+            document.write('User: ' + userChoice + '<br />');
+            document.write('Computer: ' + computerChoice + '<br />');
+            document.write(determineWinner(userChoice, computerChoice));
+            document.write('Click F5 for restart game<br />');
+        }
+
+        playGame();
+    </script>
+</body>
+
+</html>
