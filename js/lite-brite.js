@@ -20,6 +20,7 @@ function main() {
     $('.toggle-blink').on('click', function() {
         if (colorClass) {
             $(this).toggleClass('opacity');
+            $('.txt-color').addClass('text-color');
             setInterval(function() {
                 $('.box.cyan, .box.yellow, .box.magenta').toggleClass('blink');
             }, 350);

@@ -21,7 +21,7 @@ body {
 .color-picker {
     display: block;
     width: 100%;
-    height: 15vw;
+    padding-bottom: 40px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -47,73 +47,78 @@ body {
     cursor: pointer;
 }
 
+nav ul {
+    list-style: none;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:last-child a {
+    transition: .7s;
+}
+
+nav ul li:last-child a:hover {
+    color: #fff;
+}
+
+h1 {
+    font-size: 2em;
+    padding-top: 20px;
+    color: #fff;
+}
+
+p {
+    font-size: 1.4em;
+    padding-top: 20px;
+    color: #fff;
+}
+
 .select-color {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: black;
-    height: 6vw;
-    width: 17vw;
-    font-size: 2.65vw;
-    font-weight: bold;
-    letter-spacing: 0.2em;
 }
 
 .select-color.cyan {
     margin: 0 3vw;
-    border-bottom: 1vw solid #1ebacc;
+    border: 1px solid #1ebacc;
+    padding: 10px;
 }
 
 .select-color.yellow {
-    border-bottom: 1vw solid #ffea4e;
+    margin: 0 3vw;
+    border: 1px solid #ffea4e;
+    padding: 10px;
 }
 
 .select-color.magenta {
     margin: 0 3vw;
-    border-bottom: 1vw solid #ff2f9e;
+    border: 1px solid #ff2f9e;
+    padding: 10px;
 }
 
 .not-selected {
     color: #2D2D2D;
-    border-bottom: 1vw solid #2D2D2D !important;
+    border-bottom: none;
 }
 
 .toggle-blink, .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    color: white;
-    font-weight: bold;
-    height: 6vw;
-    width: 20vw;
-    border-radius: 0;
-    opacity: 0.7;
     background-color: black;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    border: 0.5vw dotted white !important;
-    font-size: 2.75vw;
+    margin: 0 3vw;
     cursor: pointer;
+    color: #2D2D2D;
+    border: 1px solid #fff;
+    padding: 10px;
 }
 
-.stop {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    color: white;
-    font-weight: bold;
-    height: 6vw;
-    width: 20vw;
-    border-radius: 0;
-    opacity: 0.7;
-    background-color: black;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    border: 0.5vw dotted white !important;
-    font-size: 2.75vw;
-    cursor: pointer;
+.text-color {
+    color: #fff;
+}
+
+.home a {
+    color: #2D2D2D;
 }
 
 .opacity {
@@ -127,4 +132,24 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+.button {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+}
+
+.button a {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #E5A227;
+    text-decoration: none;
+    transition: .7s;
+}
+
+.button a:hover {
+    background-color: #E5A227;
+    color: #fff;
 }

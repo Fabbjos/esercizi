@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
         body {
@@ -14,7 +15,11 @@
         h1 {
             padding: 50px 0 20px 0;
             font-size: 1.6em;
-            text-align: center;
+        }
+
+        p {
+            padding-bottom: 20px;
+            font-size: 1.2em;
         }
 
         .p1,
@@ -101,7 +106,10 @@
 </head>
 
 <body>
-    <h1>SASSO - FORBICI - CARTA</h1>
+    <div class="text-center">
+        <h1>SASSO - FORBICI - CARTA</h1>
+        <p>Clicca F5 per ricominciare</p>
+    </div>
     <script>
         function getUserChoice() {
             var userInput = prompt('Digita: Carta, Sasso o Forbici.');
@@ -156,7 +164,6 @@
             var userChoice = getUserChoice();
             var computerChoice = getComputerChoice();
             document.write('<div class="container"><div class="player p1">Giocatore: <span>' + userChoice + '</span></div><div class="vs">VS</div><div class="player p2">Computer: <span>' + computerChoice + '</span></div></div><br /><br />');
-            document.write('<div class="restart">Clicca F5 per ricominciare</div><br /><br />');
             document.write('<div class="undefined">' + determineWinner(userChoice, computerChoice) + '</div>');
         }
 

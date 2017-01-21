@@ -8,14 +8,22 @@
 
 <body>
     <div class="site">
-        <div class="color-picker">
-            <div class="select-color cyan not-selected">CIANO</div>
-            <div class="select-color yellow not-selected">GIALLO</div>
-            <div class="select-color magenta not-selected">MAGENTA</div>
-            <div class="toggle-blink">Strob</div>
-            &nbsp;&nbsp;&nbsp;
-            <div class="home"><a href="index.html">Home</a></div>
+
+        <div class="text-center">
+            <h1>CREA UN DISEGNO</h1>
+            <p>Seleziona un colore e clicca su un puntino, poi clicca su STROB e scopri cosa succede</p>
         </div>
+
+        <!-- nav -->
+        <nav class="navbar navbar-default color-picker">
+                <ul class="nav navbar-nav">
+                    <li class="select-color cyan not-selected">CIANO</li>
+                    <li class="select-color yellow not-selected">GIALLO</li>
+                    <li class="select-color magenta not-selected">MAGENTA</li>
+                    <li class="toggle-blink txt-color">STROB</li>
+                </ul>
+        </nav>
+        <!-- /nav -->
 
         <div class="row">
             <div class="box"></div>
@@ -1117,6 +1125,9 @@
 
 
 
+    </div>
+    <div class="button">
+        <a href="index.html">HOME</a>
     </div>
 </body>
 <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
