@@ -45,19 +45,19 @@
             padding: 10px;
             border-radius: 5px;
             background-color: #fff;
-            color: #356a70;
+            color: #E5A227;
             text-decoration: none;
             transition: .7s;
         }
 
         .button a:hover {
-            background-color: #356a70;
+            background-color: #E5A227;
             color: #fff;
         }
     </style>
 </head>
 
-<body>
+<body class="site">
     <h1>MGIC 8 BALL<br /><br />Clicca F5 sulla tastiera</h1>
     <script>
         var userQuestion = 'Errore';
@@ -105,6 +105,15 @@
     <div class="button">
         <a href="index.html">HOME</a>
     </div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function main() {
+            $('.site').hide();
+            $('.site').fadeIn(1000);
+          }
+        $(document).ready(main);
+    </script>
 </body>
 
 </html>

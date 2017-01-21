@@ -35,7 +35,7 @@
         .button a {
             padding: 10px;
             border-radius: 5px;
-            background-color: #356a70;
+            background-color: #E5A227;
             color: #fff;
             text-decoration: none;
             transition: .7s;
@@ -43,7 +43,7 @@
 
         .button a:hover {
             background-color: #fff;
-            color: #356a70;
+            color: #E5A227;
         }
     </style>
 </head>
@@ -88,6 +88,21 @@
     <div class="button">
         <a href="index.html">HOME</a>
     </div>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function main() {
+            $('.site').hide();
+            $('.site').fadeIn(1000);
+            $('.card').hover(function() {
+                $(this).toggleClass('toggle-card');
+            });
+            $('.more').on('click', function() {
+                $(this).next().slideToggle(400);
+            });
+        }
+        $(document).ready(main);
+    </script>
 </body>
 
 </html>

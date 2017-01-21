@@ -4,75 +4,190 @@
 <head>
     <meta charset="utf-8">
     <title>Selezion il tuo gioco</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            padding: 0;
-            margin: 0;
-            background-color: #356a70;
+        }
+
+        .navbar {
+            background-color: #fff;
+            border: none;
+        }
+        .navbar-default .navbar-nav>li>a {
+          color: #eee;
+          transition: .7s;
         }
 
         h1 {
-            padding: 20px 0 20px 0;
-            font-size: 1.6em;
-            text-align: center;
+            padding-bottom: 20px;
+            font-size: 2em;
+            text-transform: uppercase;
+            color: #E5A227;
         }
 
-        nav {
-            max-width: 100%;
-            height: 20px;
-            border-top: 2px solid #fff;
-            border-bottom: 2px solid #fff;
-            padding: 20px 0;
+        hr {
+            max-width: 2%;
+            border: 1px solid #E5A227;
+            margin-bottom: 20px;
         }
 
-        nav ul {
-            list-style: none;
-            width: 550px;
+        .col-xs-12,
+        .col-sm-6,
+        .col-md-3 {
+            padding: 0;
+        }
+
+        .center {
+            width: 100%;
             margin: 0 auto;
-            height: 20px;
-            line-height: 20px;
         }
 
-        nav ul li a {
-            display: block;
-            float: left;
-            text-decoration: none;
-            padding: 0 1em;
-            border-right: 2px solid #74a3a3;
-            color: #fff;
+        .card {
+            background-color: #333;
+            color: #E5A227;
+            margin: 20px auto;
+            width: 80%;
+            height: 200px;
+            line-height: 200px;
+            cursor: pointer;
             transition: .7s;
         }
 
-        nav ul li:last-child a {
-            border-right: none;
+        .toggle-card {
+            background-color: #E5A227;
+            color: #333;
+            margin: 20px auto;
+            width: 80%;
+            height: 200px;
+            line-height: 200px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: .7s;
         }
 
-        nav ul li a:hover {
-            color: #74a3a3;
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        @media(min-width:768px) {
+            .r1 {
+                max-width: 60%;
+            }
+            .center {
+                width: 80%;
+            }
+        }
+
+        @media(min-width:1400px) {
+            .center {
+                width: 60%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Seleziona un gioco</h1>
-    <div class="main">
-        <nav>
-            <ul>
-                <li>
-                    <a href="magic-8.html">Magic 8 ball</a>
-                </li>
-                <li>
-                    <a href="game.html">Sass - Forbici - Carta</a>
-                </li>
-                <li>
-                    <a href="sleep-calculator.html">Calcola il tuo sonno</a>
-                </li>
-            </ul>
-        </nav>
+    <!-- nav -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a class="navbar-brand" href="http://www.dachillefabio.it" target="_blank">dachillefabio.it</a></li>
+                </ul>
+        </div>
+    </nav>
+    <!-- /nav -->
+    <!-- center -->
+    <div class="container-fluid site">
+        <!-- giochi -->
+        <div class="row center">
+            <h1 class="text-center">Scegli un gioco</h1>
+            <hr />
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+                <a href="magic-8.html">
+                    <div class="card text-center">
+                        <p>
+                            GAME 1
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+              <a href="game.html">
+                <div class="card text-center">
+                    <p>
+                        GAME 2
+                    </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+              <a href="sleep-calculator.html">
+                <div class="card text-center">
+                    <p>
+                        GAME 3
+                    </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+              <a href="balenese.html">
+                <div class="card text-center">
+                    <p>
+                        GAME 4
+                    </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+              <a href="password-validator.html">
+                <div class="card text-center">
+                    <p>
+                        GAME 5
+                    </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-mg">
+              <a href="lite-brite.html">
+                <div class="card text-center">
+                    <p>
+                        GAME 6
+                    </p>
+                </div>
+            </div>
+          </a>
+        </div>
+        <!-- /giochi -->
     </div>
+    <!-- /center-->
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function main() {
+            $('.site').hide();
+            $('.site').fadeIn(1000);
+            $('.card').hover(function() {
+                $(this).toggleClass('toggle-card');
+            });
+            $('.more').on('click', function() {
+                $(this).next().slideToggle(400);
+            });
+        }
+        $(document).ready(main);
+    </script>
 </body>
 
 </html>

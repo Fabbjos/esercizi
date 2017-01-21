@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sleep calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .button {
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+        }
+
+        .button a {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #E5A227;
+            color: #fff;
+            text-decoration: none;
+            transition: .7s;
+        }
+
+        .button a:hover {
+            background-color: #fff;
+            color: #E5A227;
+        }
+
+        h2 {
+            padding-bottom: 20px;
+            font-size: 2em;
+            padding-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        span {
+            font-size: 1.4em;
+            color: #E5A227;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="text-center">
+      <h2>Clicca F5 per tradurre un'altra frase</h2>
+  </div>
+    <script>
+        var input = prompt('Traduci una frase in balenese');
+        var vowels = ['a', 'e', 'i', 'o', 'u'];
+        var resultArray = [];
+
+        for (var i = 0; i < input.length; i++) {
+            for (var j = 0; j < vowels.length; j++) {
+                if (input[i] == vowels[j]) {
+                    resultArray.push(input[i]);
+                }
+            }
+            if ((input[i] == 'e') || (input[i] == 'u')) {
+                resultArray.push(input[i]);
+            }
+        } //confronta ka prima lettera di input con tutte quelle all'interno di volwes
+        //fa lo stesso con tutte le altre
+        document.write(('<div class="text-center"><p>Il balenese è composto solo da vocali e la E e la U vengono raddoppiate</p></div><div class="text-center result">Traduzione: <span>') + resultArray.join('').toUpperCase() + ('</span></div>'));
+    </script>
+    <div class="button">
+        <a href="index.html">HOME</a>
+    </div>
+</body>
+
+</html>

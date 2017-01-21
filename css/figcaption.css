@@ -1,0 +1,25 @@
+figure {
+    /*border:1px solid red;*/
+    overflow: hidden;
+    /* il contenitore visualizza solo le dimensioni del contenitore */
+    position: relative;
+    margin: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+figcaption {
+    /*border:1px solid blue;*/
+    /*position: absolute;
+    /* posizioniamo figcaption rispetto al relative di figure */
+    min-width: 100%;
+    max-height: 30%;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    transition: .3s;
+}
+
+figure:hover figcaption {
+    transition: .3s;
+    transform: translateY(-100%) scale(1.5) rotate(-5deg);
+}
